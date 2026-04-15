@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline – SIPS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fff0f8 0%, #f3f4f6 50%, #fff0f8 100%);
+            padding: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(229,0,125,0.08), 0 4px 24px rgba(0,0,0,0.06);
+            animation: fadeUp 0.5s ease;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .icon-wrap {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fff0f8, #fce7f3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .icon-wrap svg { width: 52px; height: 52px; color: #e5007d; }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: .5rem;
+        }
+
+        p {
+            font-size: .925rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .85rem 1.75rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: .9rem;
+            cursor: pointer;
+            transition: all .2s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e5007d, #374151);
+            color: white;
+            box-shadow: 0 4px 14px rgba(229,0,125,0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(229,0,125,0.4); }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+            margin-left: .75rem;
+        }
+        .btn-secondary:hover { background: #e5e7eb; }
+
+        .status {
+            margin-top: 1.5rem;
+            font-size: .75rem;
+            color: #9ca3af;
+        }
+        .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ef4444;
+            margin-right: .4rem;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M18.364 5.636a9 9 0 010 12.728M5.636 5.636a9 9 0 000 12.728M12 13a1 1 0 100-2 1 1 0 000 2zm0 0v3"/>
+            </svg>
+        </div>
+
+        <h1>Tidak Ada Koneksi</h1>
+        <p>
+            Sepertinya kamu sedang offline.<br>
+            Periksa koneksi internet kamu dan coba lagi.
+        </p>
+
+        <div>
+            <button class="btn btn-primary" onclick="location.reload()">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+                Coba Lagi
+            </button>
+            <a href="/" class="btn btn-secondary">Beranda</a>
+        </div>
+
+        <div class="status">
+            <span class="dot"></span>Tidak terhubung ke internet
+        </div>
+    </div>
+
+    <script>
+        // Auto-reload when connection is restored
+        window.addEventListener('online', () => location.reload());
+    </script>
+</body>
+</html>

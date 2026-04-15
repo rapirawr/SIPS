@@ -1,0 +1,474 @@
+/* ========================
+   1. Import Font
+======================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ========================
+   2. Import Tailwind v4
+======================== */
+@import "tailwindcss";
+@source "../views";
+@source "../../app";
+
+/* ========================
+   3. Theme
+======================== */
+@theme {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #cc2c6b;
+  --color-primary-dark: #374151;
+}
+
+/* ========================
+   4. CRITICAL SVG FIX
+   Tailwind v4 preflight menghilangkan width/height atribut SVG
+   sehingga SVG mengembang. Fix ini memastikan SVG tetap inline.
+======================== */
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  /* Jangan set width/height di sini - biarkan class Tailwind yang handle */
+}
+
+/* Pastikan SVG tidak melebar ke full parent */
+svg:not([width]):not([height]):not([class*="w-"]) {
+  width: 1em;
+  height: 1em;
+}
+
+/* ========================
+   5. Base Reset
+======================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================
+   6. Sidebar Layout
+======================== */
+.sidebar { display: none; }
+.sidebar-overlay { display: none; }
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 39;
+}
+
+.sidebar-logo {
+  background: linear-gradient(135deg, #cc2c6b, #374151);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-decoration: none;
+  margin-bottom: 2px;
+  border-left: 3px solid transparent;
+}
+
+.nav-item svg {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.nav-item:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, rgba(204, 44, 107, 0.25), rgba(204, 44, 107, 0.08));
+  color: white;
+  border-left: 3px solid #cc2c6b;
+}
+
+.nav-item.active svg {
+  opacity: 1;
+}
+
+.nav-section {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 16px 16px 6px;
+  display: block;
+}
+
+/* ========================
+   7. Main Content
+======================== */
+.main-content {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* ========================
+   8. Topbar
+======================== */
+.topbar {
+  background: white;
+  border-bottom: 1px solid #f1f5f9;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.topbar svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* ========================
+   9. Notification Badge
+======================== */
+.notif-badge {
+  background: #cc2c6b;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+}
+
+/* ========================
+   10. User Dropdown
+======================== */
+.user-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 220px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  border: 1px solid #f1f5f9;
+  z-index: 100;
+  overflow: hidden;
+  animation: slideIn 0.15s ease;
+}
+
+.user-dropdown.open {
+  display: block;
+}
+
+.user-dropdown svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* ========================
+   11. Animations
+======================== */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: slideIn 0.2s ease;
+}
+
+/* ========================
+   12. Cards & UI Components
+======================== */
+.card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #cc2c6b, #374151);
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(204, 44, 107, 0.3);
+}
+
+.btn-primary svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* ========================
+   13. Login Page
+======================== */
+.login-bg {
+  background: linear-gradient(135deg, #fff0f8 0%, #f8f9ff 50%, #f0f4ff 100%);
+  min-height: 100vh;
+}
+
+.login-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 4px 16px rgba(204, 44, 107, 0.05);
+  border: 1px solid rgba(204, 44, 107, 0.08);
+  padding: 32px;
+}
+
+.login-icon-wrap {
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px;
+  min-height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.login-icon-wrap svg {
+  width: 28px !important;
+  height: 28px !important;
+  color: white;
+  stroke: white;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  color: #111827;
+}
+
+.form-input:focus {
+  border-color: #cc2c6b;
+  box-shadow: 0 0 0 3px rgba(204, 44, 107, 0.1);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+/* Demo credential box */
+.cred-box {
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.cred-box-admin {
+  background: #fff0f8;
+}
+
+.cred-box-siswa {
+  background: #eff6ff;
+}
+
+/* ========================
+   14. Track Page
+======================== */
+.track-bg {
+  background: linear-gradient(135deg, #fff0f8 0%, #f8f9ff 50%, #f0f4ff 100%);
+  min-height: 100vh;
+}
+
+/* ========================
+   15. Table Styles
+======================== */
+.table-header-cell {
+  padding: 14px 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #f9fafb;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: left;
+}
+
+.table-row {
+  border-bottom: 1px solid #f9fafb;
+  transition: background 0.15s;
+}
+
+.table-row:hover {
+  background: #f9fafb;
+}
+
+.table-cell {
+  padding: 16px 20px;
+  font-size: 0.875rem;
+  color: #374151;
+  vertical-align: middle;
+}
+
+/* ========================
+   16. Badge Styles
+======================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-pending { background: #fef3c7; color: #d97706; }
+.badge-verified { background: #dbeafe; color: #2563eb; }
+.badge-in-progress { background: #f3e8ff; color: #9333ea; }
+.badge-resolved { background: #dcfce7; color: #16a34a; }
+.badge-rejected { background: #fee2e2; color: #dc2626; }
+
+.badge-rendah { background: #dcfce7; color: #16a34a; }
+.badge-sedang { background: #dbeafe; color: #2563eb; }
+.badge-tinggi { background: #fff7ed; color: #ea580c; }
+.badge-darurat { background: #fee2e2; color: #dc2626; }
+
+/* ========================
+   17. Scrollbar
+======================== */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+
+/* ========================
+   18. Action Button Icons
+======================== */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  border-radius: 8px;
+  transition: all 0.15s;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.action-btn svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* ========================
+   19. Flash Messages
+======================== */
+.flash-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+}
+
+.flash-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+}
+
+/* ========================
+   20. Stat Cards
+======================== */
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.stat-icon {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-icon svg {
+  width: 22px !important;
+  height: 22px !important;
+}
