@@ -87,14 +87,17 @@
                 </button>
             </form>
 
+            @if(request()->has('add_account'))
 
+            @else
             <div style="text-align:center; margin-top:20px;">
                 <p style="font-size:0.875rem; color:#6b7280; margin-bottom:12px;">
                     Belum punya akun? 
-                    <a href="{{ route('register') }}" style="color:#cc2c6b; font-weight:600; text-decoration:none;">Daftar gratis</a>
+                    <a href="{{ route('register') }}" style="color:#cc2c6b; font-weight:600; text-decoration:none;">Daftar</a>
                 </p>
                 <a href="{{ route('home') }}" style="font-size:0.8rem; color:#9ca3af; text-decoration:none;">← Kembali ke Beranda</a>
             </div>
+            @endif
         </div>
 
         <p style="text-align:center; font-size:0.8rem; color:#9ca3af; margin-top:20px;">

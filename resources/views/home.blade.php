@@ -360,74 +360,108 @@
 <!-- ═══════════════════════════════════════════════════════════
      FAQ SECTION
 ═══════════════════════════════════════════════════════════ -->
-<section class="py-20 md:py-28 bg-slate-50" id="faq">
+
+<section class="py-20 md:py-28 bg-gray-50/50" id="faq">
     <div class="max-w-4xl mx-auto px-6">
         <div class="text-center mb-14 reveal">
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-full text-sm font-bold text-indigo-700 mb-4 border border-indigo-100">
-                <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Pusat Bantuan
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-pink-50 rounded-full text-sm font-bold text-pink-700 mb-4 border border-pink-100">
+                <svg class="w-4 h-4 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Frequently Asked Questions
             </div>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4">
-                Pertanyaan yang Sering <span class="text-indigo-600">Ditanyakan</span>
+                Pertanyaan yang <span style="color:#cc2c6b">Sering Diajukan</span>
             </h2>
-            <p class="text-gray-500 text-base sm:text-lg">Temukan jawaban cepat untuk pertanyaan-pertanyaan umum seputar SIPS.</p>
+            <p class="text-gray-500 max-w-2xl mx-auto text-base sm:text-lg">Temukan jawaban cepat untuk pertanyaan umum mengenai platform SIPS</p>
         </div>
 
         <div class="space-y-4">
-            <!-- FAQ 1 -->
+            <!-- FAQ Item 1 -->
             <div class="faq-card reveal">
-                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none" onclick="toggleFaq(this)">
-                    <span class="font-bold text-gray-900 pr-4 transition-colors">Apakah identitas saya aman saat melapor?</span>
-                    <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 transition-all duration-300">
+                <button type="button" onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+                    <span class="text-lg font-bold text-gray-800 transition-colors">Apa itu platform SIPS?</span>
+                    <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center transition-all duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </span>
+                    </div>
                 </button>
-                <div class="faq-content pr-6 pl-6 pb-0 overflow-hidden transition-all duration-300 max-h-0 opacity-0 relative z-[-1]">
-                    <p class="text-gray-600 text-sm leading-relaxed pb-6">Tentu saja. SIPS menjamin kerahasiaan identitas setiap pelapor. Hanya petugas berwenang yang dapat melihat detail kontak Anda untuk keperluan tindak lanjut secara privat dan aman.</p>
+                <div class="faq-content overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-6 text-gray-500 leading-relaxed">
+                        SIPS (Sarana Informasi Pengaduan Sekolah) adalah platform digital resmi SMKN 1 Bondowoso yang dirancang untuk memudahkan siswa, guru, dan staf dalam menyampaikan aspirasi, keluhan, atau melaporkan berbagai masalah di lingkungan sekolah secara transparan dan akuntabel.
+                    </div>
                 </div>
             </div>
 
-            <!-- FAQ 2 -->
+            <!-- FAQ Item 2 -->
             <div class="faq-card reveal reveal-delay-200">
-                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none" onclick="toggleFaq(this)">
-                    <span class="font-bold text-gray-900 pr-4 transition-colors">Berapa lama laporan saya akan diproses?</span>
-                    <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 transition-all duration-300">
+                <button type="button" onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+                    <span class="text-lg font-bold text-gray-800 transition-colors">Apakah identitas pelapor akan dirahasiakan?</span>
+                    <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center transition-all duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </span>
+                    </div>
                 </button>
-                <div class="faq-content pr-6 pl-6 pb-0 overflow-hidden transition-all duration-300 max-h-0 opacity-0 relative z-[-1]">
-                    <p class="text-gray-600 text-sm leading-relaxed pb-6">Standar operasional prosedur kami adalah merespon setiap laporan maksimal 2x24 jam pada hari kerja aktif. Total waktu penyelesaian sangat bergantung pada tingkat bobot masalah lapangan.</p>
+                <div class="faq-content overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-6 text-gray-500 leading-relaxed">
+                        Tentu saja. Kami menjamin kerahasiaan identitas setiap pelapor. Anda dapat memilih untuk melaporkan masalah secara anonim atau menggunakan identitas terverifikasi, namun data pribadi Anda hanya akan dapat diakses oleh tim admin terbatas yang menangani laporan tersebut.
+                    </div>
                 </div>
             </div>
 
-            <!-- FAQ 3 -->
+            <!-- FAQ Item 3 -->
             <div class="faq-card reveal reveal-delay-400">
-                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none" onclick="toggleFaq(this)">
-                    <span class="font-bold text-gray-900 pr-4 transition-colors">Apakah saya bisa menarik/menghapus laporan?</span>
-                    <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 transition-all duration-300">
+                <button type="button" onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+                    <span class="text-lg font-bold text-gray-800 transition-colors">Berapa lama laporan saya akan diproses?</span>
+                    <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center transition-all duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </span>
+                    </div>
                 </button>
-                <div class="faq-content pr-6 pl-6 pb-0 overflow-hidden transition-all duration-300 max-h-0 opacity-0 relative z-[-1]">
-                    <p class="text-gray-600 text-sm leading-relaxed pb-6">Apabila laporan sudah masuk tahap penyelidikan ("Diproses") atau "Selesai", maka laporan sudah direkam di buku catatan arsip dan tidak dapat dihapus. Anda hanya dapat membatalakan di awal fase "Menunggu".</p>
+                <div class="faq-content overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-6 text-gray-500 leading-relaxed">
+                        Setiap laporan yang masuk akan segera diproses oleh tim kami. Biasanya, verifikasi awal dilakukan dalam waktu 24 jam kerja. Waktu penyelesaian masalah secara keseluruhan bergantung pada kompleksitas masalah yang dilaporkan, namun kami berkomitmen untuk memberikan progres awal dalam maksimum 2-3 hari kerja.
+                    </div>
                 </div>
             </div>
 
-            <!-- FAQ 4 -->
+            <!-- FAQ Item 4 -->
             <div class="faq-card reveal">
-                <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none" onclick="toggleFaq(this)">
-                    <span class="font-bold text-gray-900 pr-4 transition-colors">Apa saja bukti sah yang wajib dilampirkan?</span>
-                    <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 transition-all duration-300">
+                <button type="button" onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+                    <span class="text-lg font-bold text-gray-800 transition-colors">Bagaimana cara mengetahui status laporan saya?</span>
+                    <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center transition-all duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </span>
+                    </div>
                 </button>
-                <div class="faq-content pr-6 pl-6 pb-0 overflow-hidden transition-all duration-300 max-h-0 opacity-0 relative z-[-1]">
-                    <p class="text-gray-600 text-sm leading-relaxed pb-6">Lampirkan foto nyata (maksimal 2MB per gambar), PDF pendukung, atau sekadar teks kronologi dengan detil lokasi dan waktu yang riil.</p>
+                <div class="faq-content overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-6 text-gray-500 leading-relaxed">
+                        Setiap kali ada perubahan status pada laporan Anda (seperti dari 'Diproses' menjadi 'Selesai'), Anda akan menerima notifikasi melalui dashboard akun Anda. Anda juga dapat memantau progres detail laporan melalui menu 'Riwayat Pengaduan'.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-card reveal reveal-delay-200">
+                <button type="button" onclick="toggleFaq(this)" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4">
+                    <span class="text-lg font-bold text-gray-800 transition-colors">Masalah apa saja yang bisa dilaporkan?</span>
+                    <div class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center transition-all duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                </button>
+                <div class="faq-content overflow-hidden transition-all duration-300 ease-in-out">
+                    <div class="px-6 pb-6 text-gray-500 leading-relaxed">
+                        Anda dapat melaporkan berbagai hal mulai dari kerusakan fasilitas sekolah, keluhan pelayanan administrasi, hingga tindakan perundungan (bullying) atau tindakan tidak disiplin di lingkungan sekolah. Pastikan laporan Anda disertai dengan informasi atau bukti yang cukup untuk mempermudah proses tindak lanjut.
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Help desk link -->
+        <div class="mt-12 text-center reveal reveal-delay-400">
+            <p class="text-gray-500 mb-4">Masih punya pertanyaan lainnya?</p>
+            <a href="/kontak" class="inline-flex items-center gap-2 font-bold hover:gap-3 transition-all" style="color:#cc2c6b">
+                Hubungi Tim Support Kami
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
     </div>
 </section>
+
 
 <!-- ═══════════════════════════════════════════════════════════
      CTA SECTION
@@ -490,7 +524,7 @@
             <div>
                 <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Dukungan</h4>
                 <ul class="space-y-2.5 text-sm">
-                    <li><a href="/faq" class="footer-link">FAQ</a></li>
+                    <li><a href="{{ Request::is('/') ? '#faq' : url('/#faq') }}" class="footer-link">FAQ</a></li>
                     <li><a href="/panduan" class="footer-link">Panduan</a></li>
                     <li><a href="/kontak" class="footer-link">Kontak</a></li>
                     <li><a href="/kebijakan" class="footer-link">Kebijakan Privasi</a></li>
@@ -890,27 +924,40 @@
 
     /* ──────── FAQ ──────── */
     .faq-card {
-        background: white;
-        border: 1px solid #f1f5f9;
-        border-radius: 16px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        overflow: hidden;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
     }
     .faq-card:hover {
-        border-color: #e0e7ff;
-        box-shadow: 0 4px 20px rgba(79, 70, 229, 0.05);
+        background: white;
+        transform: translateY(-2px);
+        border-color: rgba(204, 44, 107, 0.3);
+        box-shadow: 0 10px 30px rgba(204, 44, 107, 0.05);
     }
     .faq-card.open {
-        border-color: #6366f1;
-        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+        background: white;
+        border-color: #cc2c6b;
+        box-shadow: 0 15px 40px rgba(204, 44, 107, 0.12);
     }
     .faq-card.open .faq-icon {
         transform: rotate(180deg);
-        background: #6366f1;
+        background: #cc2c6b;
         color: white;
     }
-    .faq-card.open .font-bold {
-        color: #4f46e5;
+    .faq-card.open span {
+        color: #cc2c6b;
+    }
+    .faq-content {
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .faq-card.open .faq-content {
+        opacity: 1;
+        /* max-height set via dynamic script */
     }
 
     /* ──────── CTA ──────── */
@@ -1015,33 +1062,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 2. FAQ Toggle Logic
     window.toggleFaq = function(btn) {
-        const card = btn.parentElement;
+        const card = btn.closest('.faq-card');
         const content = card.querySelector('.faq-content');
+        const allCards = document.querySelectorAll('.faq-card');
         
-        // Auto-close open accordions
-        document.querySelectorAll('.faq-card').forEach(otherCard => {
-            if (otherCard !== card && otherCard.classList.contains('open')) {
-                otherCard.classList.remove('open');
-                const otherContent = otherCard.querySelector('.faq-content');
-                otherContent.style.maxHeight = '0px';
-                otherContent.style.opacity = '0';
-                otherContent.style.zIndex = '-1';
+        const isAlreadyOpen = card.classList.contains('open');
+
+        allCards.forEach(c => {
+            c.classList.remove('open');
+            const cContent = c.querySelector('.faq-content');
+            if (cContent) {
+                cContent.style.maxHeight = '0px';
+                cContent.style.opacity = '0';
             }
         });
 
-        // Toggle states
-        if (card.classList.contains('open')) {
-            card.classList.remove('open');
-            content.style.maxHeight = '0px';
-            content.style.opacity = '0';
-            content.style.zIndex = '-1';
-        } else {
+        if (!isAlreadyOpen) {
             card.classList.add('open');
-            content.style.zIndex = '1';
             content.style.opacity = '1';
             content.style.maxHeight = content.scrollHeight + 'px';
         }
-    }
+    };
+
+    // Force close all on load
+    document.querySelectorAll('.faq-content').forEach(c => {
+        c.style.maxHeight = '0px';
+        c.style.opacity = '0';
+    });
 
     // 3. Counter Animation
     const counters = document.querySelectorAll('.counter');
